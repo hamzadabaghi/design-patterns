@@ -20,7 +20,16 @@ public class Main {
 
         /* restore */
         editor.setContent("c");
-        editor.restore(history.pop());
+        System.out.println(editor);
+
+        try {
+            editor.restore(history.pop());
+            editor.restore(history.pop());
+            editor.restore(history.pop());
+        }
+        catch (IndexOutOfBoundsException e){
+            System.err.println("There is no other states left");
+        }
         System.out.println("after restoring " + editor);
     }
 }

@@ -5,13 +5,13 @@ import java.util.List;
 
 public class History {
 
-    private final List<EditorState> history = new ArrayList<>();
+    private final List<Object> history = new ArrayList<>();
 
-    public void push(EditorState e) {
+    public void push(Object e) {
         history.add(e);
     }
 
-    public EditorState pop() {
+    public Object pop() {
         var lastIndex = history.size() - 1;
         var lastItem = history.get(lastIndex);
         history.remove(lastIndex);
